@@ -8,11 +8,38 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var emojilist_tv: UITableView!
+    
+    var emojiArr : Array = [
+        "😬",
+        "😁",
+        "😅",
+        "😟",
+        "😡"
+    ];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        emojilist_tv.dataSource = self;
+        emojilist_tv.delegate = self;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return emojiArr.count;
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell();
+        cell.textLabel?.text = emojiArr[indexPath.row];
+        
+        return cell;
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="skd-cZ-KX3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="skd-cZ-KX3" secondAttribute="bottom" id="17q-76-4ob"/>
+                            <constraint firstItem="skd-cZ-KX3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2zA-74-6lr"/>
+                            <constraint firstAttribute="trailing" secondItem="skd-cZ-KX3" secondAttribute="trailing" id="6Oc-Dz-7WU"/>
+                            <constraint firstItem="skd-cZ-KX3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7xK-sN-Wca"/>
+                            <constraint firstItem="skd-cZ-KX3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Pr9-Ql-m1G"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="skd-cZ-KX3" secondAttribute="bottom" id="UTD-Kt-Teb"/>
+                            <constraint firstItem="skd-cZ-KX3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eI8-Tl-0wa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emojilist_tv" destination="skd-cZ-KX3" id="y1d-Ya-ya3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jpL-6k-nLf">
+            <objects>
+                <viewController id="rdl-k1-VMi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DuK-1E-Tpd"/>
+                        <viewControllerLayoutGuide type="bottom" id="zOP-Hf-7uA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WbU-h6-rBw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-uo-KyZ">
+                                <rect key="frame" x="78.5" y="60" width="218" height="239"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lovely Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4m5-I4-hKM">
+                                <rect key="frame" x="140" y="349" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uk4-uo-KyZ" firstAttribute="centerX" secondItem="WbU-h6-rBw" secondAttribute="centerX" id="3JL-Af-j6m"/>
+                            <constraint firstItem="4m5-I4-hKM" firstAttribute="centerX" secondItem="WbU-h6-rBw" secondAttribute="centerX" id="A2E-bW-YXp"/>
+                            <constraint firstItem="uk4-uo-KyZ" firstAttribute="top" secondItem="DuK-1E-Tpd" secondAttribute="bottom" constant="40" id="ohM-v4-gxp"/>
+                            <constraint firstItem="4m5-I4-hKM" firstAttribute="top" secondItem="uk4-uo-KyZ" secondAttribute="bottom" constant="50" id="oxq-RM-Hhs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYa-I9-u4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="38"/>
         </scene>
     </scenes>
 </document>
